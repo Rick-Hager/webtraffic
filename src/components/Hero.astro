@@ -1,0 +1,143 @@
+---
+export interface Props {
+  variant?: 'home' | 'page';
+  badge?: string;
+  title: string;
+  subtitle?: string;
+  ctaPrimaryText?: string;
+  ctaPrimaryHref?: string;
+  ctaSecondaryText?: string;
+  ctaSecondaryHref?: string;
+  auxiliaryText?: string;
+}
+
+const {
+  variant = 'page',
+  badge,
+  title,
+  subtitle,
+  ctaPrimaryText,
+  ctaPrimaryHref = '/contato',
+  ctaSecondaryText,
+  ctaSecondaryHref = '#',
+  auxiliaryText,
+} = Astro.props;
+---
+
+<section
+  class:list={['hero', `hero--${variant}`]}
+  aria-labelledby="hero-heading"
+>
+  <div class="container hero-inner">
+    {badge && (
+      <div class="hero-badge-wrap">
+        <span class="badge badge-primary">{badge}</span>
+      </div>
+    )}
+    <h1 id="hero-heading" class="hero-title">{title}</h1>
+    {subtitle && <p class="hero-subtitle">{subtitle}</p>}
+    {(ctaPrimaryText || ctaSecondaryText) && (
+      <div class="hero-actions">
+        {ctaPrimaryText && (
+          <a href={ctaPrimaryHref} class="btn-primary btn-lg">
+            {ctaPrimaryText}
+          </a>
+        )}
+        {ctaSecondaryText && (
+          <a
+            href={ctaSecondaryHref}
+            class:list={[variant === 'home' ? 'btn-outline-white' : 'btn-secondary', 'btn-lg']}
+          >
+            {ctaSecondaryText}
+          </a>
+        )}
+      </div>
+    )}
+    {auxiliaryText && (
+      <p class="hero-auxiliary">{auxiliaryText}</p>
+    )}
+  </div>
+</section>
+
+<style>
+  .hero { position: relative; overflow: hidden; }
+  .hero-inner { position: relative; z-index: 1; text-align: center; }
+
+  /* Home variant */
+  .hero--home {
+    background: var(--gradient-dark);
+    padding: var(--space-32) 0 var(--space-24);
+    color: var(--color-white);
+  }
+  .hero--home::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(26,86,219,0.35) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero--home .hero-title {
+    font-size: var(--font-size-hero);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-white);
+    line-height: var(--line-height-tight);
+    max-width: 800px;
+    margin: 0 auto var(--space-6);
+    letter-spacing: -0.025em;
+  }
+  .hero--home .hero-subtitle {
+    font-size: var(--font-size-lead);
+    color: rgba(255,255,255,0.8);
+    max-width: 580px;
+    margin: 0 auto var(--space-10);
+    line-height: var(--line-height-relaxed);
+  }
+  .hero--home .hero-auxiliary {
+    margin-top: var(--space-6);
+    font-size: var(--font-size-small);
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* Page variant */
+  .hero--page {
+    background: var(--color-white);
+    padding: var(--space-16) 0 var(--space-12);
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+  .hero--page .hero-title {
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-gray-950);
+    line-height: var(--line-height-tight);
+    max-width: 700px;
+    margin: 0 auto var(--space-5);
+    letter-spacing: -0.025em;
+  }
+  .hero--page .hero-subtitle {
+    font-size: var(--font-size-lead);
+    color: var(--color-gray-500);
+    max-width: 560px;
+    margin: 0 auto var(--space-8);
+    line-height: var(--line-height-relaxed);
+  }
+
+  /* Shared */
+  .hero-badge-wrap { margin-bottom: var(--space-5); }
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .hero--home { padding: var(--space-20) 0 var(--space-16); }
+    .hero--page { padding: var(--space-12) 0 var(--space-8); }
+  }
+  @media (max-width: 480px) {
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .hero-actions a { text-align: center; justify-content: center; }
+  }
+</style>

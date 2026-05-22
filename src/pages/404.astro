@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Página não encontrada — WebTraffic"
+  description="A página que você buscou não existe ou foi movida."
+  noindex={true}
+>
+  <section class="not-found" aria-labelledby="not-found-heading">
+    <div class="container not-found-inner">
+      <div class="not-found-code" aria-hidden="true">404</div>
+      <h1 id="not-found-heading" class="not-found-title">Página não encontrada</h1>
+      <p class="not-found-text">
+        O endereço que você buscou não existe ou foi movido. Verifique o link ou volte para o início.
+      </p>
+      <div class="not-found-actions">
+        <a href="/" class="btn-primary btn-lg">Voltar para o início</a>
+        <a href="/contato" class="btn-secondary btn-lg">Falar com a equipe</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .not-found {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-20) 0;
+  }
+  .not-found-inner { text-align: center; max-width: 520px; }
+  .not-found-code {
+    font-size: clamp(5rem, 20vw, 10rem);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-primary);
+    line-height: 1;
+    opacity: 0.12;
+    letter-spacing: -0.04em;
+    margin-bottom: var(--space-4);
+    user-select: none;
+  }
+  .not-found-title {
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-gray-950);
+    line-height: var(--line-height-tight);
+    letter-spacing: -0.025em;
+    margin-bottom: var(--space-5);
+  }
+  .not-found-text {
+    font-size: var(--font-size-lead);
+    color: var(--color-gray-500);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-10);
+  }
+  .not-found-actions {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 480px) {
+    .not-found-actions {
+      flex-direction: column;
+    }
+    .not-found-actions a {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+</style>

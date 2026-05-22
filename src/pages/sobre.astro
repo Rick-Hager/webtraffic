@@ -1,0 +1,273 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<Base
+  title="Sobre a WebTraffic | Agência de Tráfego Pago com Transparência e Resultado"
+  description="Conheça a WebTraffic: nossa história, missão e por que acreditamos que tráfego pago precisa ser feito com transparência, dados reais e parceria genuína."
+>
+
+  <Hero
+    variant="page"
+    title="Resultado real. Sem atalhos, sem promessas vazias."
+    subtitle="A WebTraffic nasceu da crença de que tráfego pago bem feito transforma negócios — e de que os clientes merecem saber exatamente o que está acontecendo com o dinheiro deles."
+  />
+
+  <!-- ── Nossa história ── -->
+  <section class="section" aria-labelledby="historia-heading">
+    <div class="container">
+      <div class="historia-layout">
+
+        <div class="historia-content">
+          <h2 id="historia-heading" class="section-title">Nossa história</h2>
+          <div class="historia-text">
+            <p>A WebTraffic surgiu de uma experiência que muitos donos de empresa conhecem: pagar por gestão de anúncios e nunca entender direito se aquilo estava funcionando. Relatórios cheios de impressões e alcances, sem uma palavra sobre vendas ou retorno real.</p>
+            <p>Decidimos fazer diferente. Construímos uma agência onde o cliente sabe o que está pagando, para onde vai cada real de verba, e o que os números realmente significam para o negócio dele.</p>
+            <p>Hoje, gerenciamos campanhas de Google Ads e Meta Ads para PMEs brasileiras que querem crescer com estratégia — não com sorte.</p>
+            <!-- VALIDAR: Rick Hager deve revisar e complementar este texto com a história real: ano de fundação, cidade, motivação pessoal e marcos importantes. -->
+          </div>
+        </div>
+
+        <aside class="historia-aside">
+          <div class="missao-card">
+            <p class="missao-label">Nossa missão</p>
+            <blockquote class="missao-text">
+              &ldquo;Conectar negócios brasileiros aos seus clientes ideais por meio de tráfego digital estratégico, gerenciado com transparência total e orientado a resultados reais.&rdquo;
+            </blockquote>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Valores ── -->
+  <section class="section section-alt" aria-labelledby="valores-heading">
+    <div class="container">
+      <header class="section-header">
+        <h2 id="valores-heading" class="section-title">O que nos move</h2>
+        <p class="section-subtitle">Os valores que guiam cada decisão da WebTraffic.</p>
+      </header>
+
+      <div class="valores-grid">
+
+        <div class="valor-card animate-on-scroll">
+          <div class="valor-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="valor-title">Transparência</h3>
+          <p class="valor-body">Sem markup de mídia. Sem relatório de vaidade. Você vê tudo — fee, verba e resultado.</p>
+        </div>
+
+        <div class="valor-card animate-on-scroll">
+          <div class="valor-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3 class="valor-title">Resultados reais</h3>
+          <p class="valor-body">Medimos o que importa para o seu negócio: vendas, leads, CAC, ROAS — não impressões e alcance.</p>
+        </div>
+
+        <div class="valor-card animate-on-scroll">
+          <div class="valor-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3 class="valor-title">Parceria genuína</h3>
+          <p class="valor-body">Não somos fornecedor — somos parceiros do seu crescimento. Seu sucesso é o nosso sucesso.</p>
+        </div>
+
+        <div class="valor-card animate-on-scroll">
+          <div class="valor-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3 class="valor-title">Atualização constante</h3>
+          <p class="valor-body">O Google e o Meta mudam toda semana. Estamos sempre um passo à frente para o seu negócio.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Equipe ── -->
+  <section class="section" aria-labelledby="equipe-heading">
+    <div class="container">
+      <header class="section-header">
+        <h2 id="equipe-heading" class="section-title">Quem está por trás da WebTraffic</h2>
+        <p class="section-subtitle">Especialistas que cuidam das suas campanhas com dedicação e transparência.</p>
+      </header>
+
+      <div class="equipe-grid">
+        <!-- Card placeholder: dados de Rick Hager a completar pelo cliente -->
+        <div class="team-card">
+          <div class="team-avatar" aria-label="Foto de Rick Hager — a ser adicionada">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">Rick Hager</h3>
+            <p class="team-role">Fundador &amp; Gestor de Tráfego</p>
+            <span class="badge badge-warning">Informações sendo finalizadas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <CTASection
+    title="Quer conhecer como trabalhamos antes de contratar?"
+    subtitle="Agende uma conversa sem compromisso. Explicamos o processo, entendemos o seu negócio e mostramos como podemos ajudar."
+    ctaText="Agendar uma conversa"
+    ctaHref="/contato"
+  />
+
+</Base>
+
+<style>
+  /* História */
+  .historia-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: var(--space-16);
+    align-items: start;
+  }
+  .historia-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    margin-top: var(--space-8);
+  }
+  .historia-text p {
+    font-size: var(--font-size-lead);
+    color: var(--color-gray-700);
+    line-height: var(--line-height-relaxed);
+  }
+  .missao-card {
+    background: var(--gradient-primary);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-10);
+    color: var(--color-white);
+    position: sticky;
+    top: calc(68px + var(--space-8));
+  }
+  .missao-label {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: var(--space-4);
+  }
+  .missao-text {
+    font-size: var(--font-size-lead);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-white);
+    font-style: italic;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Valores */
+  .valores-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+  }
+  .valor-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-sm);
+    transition:
+      box-shadow var(--duration-normal),
+      transform var(--duration-normal),
+      border-color var(--duration-normal);
+  }
+  .valor-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+  }
+  .valor-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--color-primary-light);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    margin-bottom: var(--space-5);
+  }
+  .valor-title {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-950);
+    margin-bottom: var(--space-3);
+  }
+  .valor-body {
+    font-size: var(--font-size-body);
+    color: var(--color-gray-500);
+    line-height: var(--line-height-relaxed);
+  }
+
+  /* Equipe */
+  .equipe-grid {
+    display: flex;
+    justify-content: center;
+  }
+  .team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-xl);
+    padding: var(--space-10);
+    box-shadow: var(--shadow-md);
+    width: 280px;
+    gap: var(--space-4);
+  }
+  .team-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: var(--radius-full);
+    background: var(--color-gray-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gray-500);
+    border: 2px dashed var(--color-gray-300);
+  }
+  .team-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+  }
+  .team-name {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-950);
+  }
+  .team-role {
+    font-size: var(--font-size-small);
+    color: var(--color-gray-500);
+  }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .historia-layout { grid-template-columns: 1fr; gap: var(--space-8); }
+    .missao-card { position: static; }
+  }
+  @media (max-width: 1024px) {
+    .valores-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .valores-grid { grid-template-columns: 1fr; }
+  }
+</style>

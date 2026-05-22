@@ -1,0 +1,155 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Col 1: Brand -->
+      <div class="footer-brand">
+        <a href="/" class="footer-logo" aria-label="WebTraffic — Página inicial">
+          <span class="footer-logo-mark" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 18 L8 6 L11 14 L14 6 L18 18" stroke="#1A56DB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="footer-logo-wordmark">WebTraffic</span>
+        </a>
+        <p class="footer-tagline">Tráfego pago que vira faturamento.</p>
+      </div>
+
+      <!-- Col 2: Navegação -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">Navegação</h3>
+        <ul>
+          <li><a href="/servicos">Serviços</a></li>
+          <li><a href="/sobre">Sobre</a></li>
+          <li><a href="/contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Serviços -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">Serviços</h3>
+        <ul>
+          <li><a href="/servicos#google-ads">Google Ads</a></li>
+          <li><a href="/servicos#meta-ads">Meta Ads</a></li>
+          <li><a href="/servicos#estrategia">Estratégia de Performance</a></li>
+          <li><a href="/servicos#relatorios">Relatórios e BI</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: CTA -->
+      <div class="footer-col">
+        <h3 class="footer-col-title">Vamos conversar?</h3>
+        <p class="footer-cta-text">
+          Análise gratuita das suas campanhas, sem compromisso.
+        </p>
+        <a href="/contato" class="btn-primary footer-cta-btn">Falar com especialista</a>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p>&copy; {year} WebTraffic. Todos os direitos reservados.</p>
+      <p class="footer-legal-note">Atendimento 100% remoto — todo o Brasil.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--gradient-dark);
+    color: var(--color-white);
+    padding: var(--space-16) 0 var(--space-8);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: var(--space-12);
+    padding-bottom: var(--space-12);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* Brand */
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+    margin-bottom: var(--space-4);
+  }
+  .footer-logo-wordmark {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    letter-spacing: -0.025em;
+  }
+  .footer-tagline {
+    font-size: var(--font-size-body);
+    color: rgba(255,255,255,0.6);
+    line-height: var(--line-height-relaxed);
+    max-width: 220px;
+  }
+
+  /* Columns */
+  .footer-col-title {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-4);
+  }
+  .footer-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    list-style: none;
+  }
+  .footer-col ul li a {
+    font-size: var(--font-size-body);
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    transition: color var(--duration-fast);
+  }
+  .footer-col ul li a:hover { color: var(--color-white); }
+
+  .footer-cta-text {
+    font-size: var(--font-size-small);
+    color: rgba(255,255,255,0.6);
+    margin-bottom: var(--space-4);
+    line-height: var(--line-height-relaxed);
+  }
+  .footer-cta-btn {
+    font-size: var(--font-size-small);
+    padding: var(--space-2) var(--space-5);
+  }
+
+  /* Bottom */
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    padding-top: var(--space-8);
+  }
+  .footer-bottom p {
+    font-size: var(--font-size-small);
+    color: rgba(255,255,255,0.45);
+  }
+  .footer-legal-note { font-size: var(--font-size-xs) !important; }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-8); }
+  }
+  @media (max-width: 640px) {
+    .footer-grid { grid-template-columns: 1fr; gap: var(--space-8); }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+  }
+</style>

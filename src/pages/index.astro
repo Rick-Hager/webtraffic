@@ -1,71 +1,318 @@
 ---
-const nomeFantasia = "WebTraffic";
-const slug = "webtraffic";
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import CTASection from '../components/CTASection.astro';
 ---
-<!doctype html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{nomeFantasia}</title>
-    <style>
-      :root {
-        --fg: #1a1a1a;
-        --muted: #6b6b6b;
-        --accent: #2563eb;
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-        color: var(--fg);
-        background: #fafafa;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-        line-height: 1.6;
-      }
-      main {
-        max-width: 560px;
-        text-align: center;
-      }
-      h1 {
-        font-size: clamp(2rem, 6vw, 3rem);
-        margin: 0 0 1rem;
-        letter-spacing: -0.02em;
-      }
-      p { color: var(--muted); margin: 0 0 2rem; font-size: 1.1rem; }
-      .badge {
-        display: inline-block;
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: var(--accent);
-        background: #eff6ff;
-        padding: 0.25rem 0.75rem;
-        border-radius: 999px;
-        margin-bottom: 1.5rem;
-      }
-      footer {
-        margin-top: 3rem;
-        font-size: 0.85rem;
-        color: var(--muted);
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <span class="badge">Em construção</span>
-      <h1>{nomeFantasia}</h1>
-      <p>
-        Seu novo site está sendo preparado. Em breve você encontrará aqui informações
-        sobre nossos serviços, equipe e formas de contato.
-      </p>
-      <footer>
-        Site gerado pela Renovo · <code>{slug}</code>
-      </footer>
-    </main>
-  </body>
-</html>
+
+<Base
+  title="WebTraffic — Agência de Tráfego Pago para PMEs | Google Ads e Meta Ads"
+  description="Gestão de Google Ads e Meta Ads com transparência total e foco em resultado real. Sem markup de mídia, sem promessas vazias. Fale com a WebTraffic."
+>
+
+  <!-- ── Hero ── -->
+  <Hero
+    variant="home"
+    badge="Agência de Tráfego Pago"
+    title="Tráfego pago que vira faturamento — não só cliques."
+    subtitle="Gerenciamos suas campanhas de Google Ads e Meta Ads com estratégia, dados reais e transparência total. Você sabe exatamente onde cada real de verba é investido."
+    ctaPrimaryText="Quero uma análise gratuita"
+    ctaPrimaryHref="/contato"
+    ctaSecondaryText="Ver como funciona"
+    ctaSecondaryHref="#como-funciona"
+    auxiliaryText="Sem contrato de fidelidade no primeiro mês. Sem markup de mídia. Sem promessas impossíveis."
+  />
+
+  <!-- ── Nota: Seção de métricas numéricas ocultada ─────────────────────────
+       Compensação FAIL G: os valores [X]+, R$ [X] mi+, [X]x, [X]/10 estão
+       pendentes de dados reais do cliente. A seção será ativada após o
+       cliente fornecer os números.
+  ─────────────────────────────────────────────────────────────────────── -->
+
+  <!-- ── Serviços ── -->
+  <section class="section" id="servicos" aria-labelledby="servicos-heading">
+    <div class="container">
+      <header class="section-header">
+        <h2 id="servicos-heading" class="section-title">O que fazemos</h2>
+        <p class="section-subtitle">Gestão especializada dos canais que mais convertem para o seu negócio.</p>
+      </header>
+
+      <div class="services-grid">
+
+        <article class="card animate-on-scroll">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3 class="card-title">Google Ads</h3>
+          <p class="card-body">Apareça na frente de quem já está buscando o que você vende. Gerenciamos Search, Display, Shopping e YouTube com foco em CPA eficiente e orçamento bem alocado.</p>
+          <a href="/servicos#google-ads" class="card-cta-link">Saiba mais &rarr;</a>
+        </article>
+
+        <article class="card animate-on-scroll">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <h3 class="card-title">Meta Ads</h3>
+          <p class="card-body">Criamos e otimizamos campanhas no Meta para alcançar o público certo na hora certa. Do reconhecimento de marca à conversão direta — com criativos que funcionam.</p>
+          <a href="/servicos#meta-ads" class="card-cta-link">Saiba mais &rarr;</a>
+        </article>
+
+        <article class="card animate-on-scroll">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3 class="card-title">Estratégia e Planejamento</h3>
+          <p class="card-body">Antes de subir qualquer campanha, entendemos o seu negócio, o seu cliente e o seu mercado. Cada real investido tem um objetivo claro e uma métrica de sucesso definida.</p>
+          <a href="/servicos#estrategia" class="card-cta-link">Saiba mais &rarr;</a>
+        </article>
+
+        <article class="card animate-on-scroll">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3 class="card-title">Relatórios que você entende</h3>
+          <p class="card-body">Dados de performance traduzidos em resultado de negócio: custo por venda, ROAS, CAC — e o que fazer a seguir. Sem jargão, sem eufemismo.</p>
+          <a href="/servicos#relatorios" class="card-cta-link">Saiba mais &rarr;</a>
+        </article>
+
+      </div>
+
+      <div class="section-cta-center">
+        <a href="/servicos" class="btn-primary">Conheça todos os serviços</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Como Funciona ── -->
+  <section class="section section-alt" id="como-funciona" aria-labelledby="como-funciona-heading">
+    <div class="container">
+      <header class="section-header">
+        <h2 id="como-funciona-heading" class="section-title">Como funciona a parceria</h2>
+        <p class="section-subtitle">Um processo simples, transparente e orientado ao resultado do seu negócio.</p>
+      </header>
+
+      <div class="steps-grid">
+
+        <div class="step-card animate-on-scroll">
+          <span class="step-number" aria-hidden="true">01</span>
+          <h3 class="step-title">Diagnóstico gratuito</h3>
+          <p class="step-body">Analisamos sua situação atual — conta de anúncios existente, site, histórico de resultados e metas de negócio. Sem custo, sem compromisso.</p>
+        </div>
+
+        <div class="step-card animate-on-scroll">
+          <span class="step-number" aria-hidden="true">02</span>
+          <h3 class="step-title">Proposta personalizada</h3>
+          <p class="step-body">Com base no diagnóstico, apresentamos uma estratégia específica para o seu negócio, com canais recomendados, projeções realistas e investimento necessário.</p>
+        </div>
+
+        <div class="step-card animate-on-scroll">
+          <span class="step-number" aria-hidden="true">03</span>
+          <h3 class="step-title">Início da gestão</h3>
+          <p class="step-body">Configuramos ou auditamos sua conta, criamos a estrutura de campanhas e iniciamos a gestão. Você tem acesso ao gestor dedicado desde o primeiro dia.</p>
+        </div>
+
+        <div class="step-card animate-on-scroll">
+          <span class="step-number" aria-hidden="true">04</span>
+          <h3 class="step-title">Otimização e relatório contínuos</h3>
+          <p class="step-body">Toda semana, otimizamos as campanhas. Todo mês, entregamos um relatório claro com resultados e próximos passos. Reunião de alinhamento inclusa.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Diferenciais ── -->
+  <section class="section" id="diferenciais" aria-labelledby="diferenciais-heading">
+    <div class="container">
+      <header class="section-header">
+        <h2 id="diferenciais-heading" class="section-title">Por que a WebTraffic</h2>
+        <p class="section-subtitle">O que nos diferencia das outras agências.</p>
+      </header>
+
+      <div class="diff-grid">
+
+        <div class="diff-card animate-on-scroll">
+          <div class="diff-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="diff-content">
+            <h3 class="diff-title">Transparência total de verba</h3>
+            <p class="diff-body">Cobramos fee fixo de gestão. 100% da sua verba de mídia vai direto para o Google ou Meta — sem markup escondido, sem comissão sobre o que você investe nas plataformas.</p>
+          </div>
+        </div>
+
+        <div class="diff-card animate-on-scroll">
+          <div class="diff-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.25 9.08 19.82 19.82 0 01.18 2H3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L4.43 9.91a16 16 0 006 6l1.27-.5a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 18.92z"/></svg>
+          </div>
+          <div class="diff-content">
+            <h3 class="diff-title">Acesso direto ao gestor</h3>
+            <p class="diff-body">Você tem o contato direto do seu gestor de conta. Dúvidas respondidas pelo WhatsApp em horas — não em tickets que demoram dias.</p>
+          </div>
+        </div>
+
+        <div class="diff-card animate-on-scroll">
+          <div class="diff-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <div class="diff-content">
+            <h3 class="diff-title">Resultados em linguagem de negócio</h3>
+            <p class="diff-body">Nossos relatórios falam de faturamento, leads e clientes — não só de CTR e impressões. Você sabe se o investimento está valendo a pena.</p>
+          </div>
+        </div>
+
+        <div class="diff-card animate-on-scroll">
+          <div class="diff-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="diff-content">
+            <h3 class="diff-title">Sempre atualizado</h3>
+            <p class="diff-body">O Google e o Meta mudam toda semana. Nossa equipe acompanha todas as novidades — Performance Max, IA nas plataformas — e aplica antes que vire commodity.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos: seção reservada para ativação após coleta de depoimentos reais -->
+  <!--
+  <section class="section section-alt" id="depoimentos" aria-labelledby="depoimentos-heading">
+    <div class="container">
+      <h2 id="depoimentos-heading" class="section-title">O que nossos clientes dizem</h2>
+      ... cards de depoimentos reais aqui ...
+    </div>
+  </section>
+  -->
+
+  <!-- ── CTA Final ── -->
+  <CTASection
+    title="Pronto para parar de adivinhar e começar a crescer com dados?"
+    subtitle="Análise gratuita da sua conta de anúncios — sem compromisso. Veja o que está funcionando, o que não está e o que fazer a seguir."
+    ctaText="Quero minha análise gratuita"
+    ctaHref="/contato"
+    auxiliaryText="Resposta em até 24 horas úteis."
+  />
+
+</Base>
+
+<style>
+  /* ── Services grid ── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+  }
+  .card-cta-link {
+    display: inline-block;
+    margin-top: var(--space-4);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    transition: color var(--duration-fast);
+  }
+  .card-cta-link:hover { color: var(--color-primary-hover); }
+
+  .section-cta-center {
+    text-align: center;
+    margin-top: var(--space-10);
+  }
+
+  /* ── Steps grid ── */
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+  }
+  .step-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-sm);
+  }
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-extrabold);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-5);
+  }
+  .step-title {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-950);
+    margin-bottom: var(--space-3);
+  }
+  .step-body {
+    font-size: var(--font-size-body);
+    color: var(--color-gray-500);
+    line-height: var(--line-height-relaxed);
+  }
+
+  /* ── Diferenciais ── */
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+  .diff-card {
+    display: flex;
+    gap: var(--space-5);
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-sm);
+    transition:
+      box-shadow var(--duration-normal),
+      transform var(--duration-normal),
+      border-color var(--duration-normal);
+  }
+  .diff-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+    border-color: var(--color-primary);
+  }
+  .diff-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--color-primary-light);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .diff-title {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-950);
+    margin-bottom: var(--space-3);
+  }
+  .diff-body {
+    font-size: var(--font-size-body);
+    color: var(--color-gray-500);
+    line-height: var(--line-height-relaxed);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .steps-grid    { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .diff-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .steps-grid    { grid-template-columns: 1fr; }
+  }
+</style>

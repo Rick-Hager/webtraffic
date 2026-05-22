@@ -1,0 +1,219 @@
+---
+export interface Props {
+  currentPath: string;
+}
+const { currentPath } = Astro.props;
+
+const navLinks = [
+  { label: 'Serviços', href: '/servicos' },
+  { label: 'Sobre',    href: '/sobre'    },
+  { label: 'Contato',  href: '/contato'  },
+];
+
+function isActive(href: string) {
+  if (href === '/') return currentPath === '/';
+  return currentPath.startsWith(href);
+}
+---
+
+<header id="site-header" class="site-header">
+  <div class="container header-inner">
+    <!-- Logo -->
+    <a href="/" class="logo" aria-label="WebTraffic — Página inicial">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 18 L8 6 L11 14 L14 6 L18 18" stroke="#1A56DB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="logo-wordmark">WebTraffic</span>
+    </a>
+
+    <!-- Nav desktop -->
+    <nav class="nav-desktop" aria-label="Menu principal">
+      <ul>
+        {navLinks.map(link => (
+          <li>
+            <a
+              href={link.href}
+              class:list={['nav-link', { 'nav-link--active': isActive(link.href) }]}
+              aria-current={isActive(link.href) ? 'page' : undefined}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- CTA desktop -->
+    <a href="/contato" class="btn-primary header-cta">Análise gratuita</a>
+
+    <!-- Botão hamburger mobile -->
+    <button
+      id="menu-toggle"
+      class="menu-toggle"
+      aria-label="Abrir menu de navegação"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+    >
+      <svg id="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="6"  x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+      <svg id="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" style="display:none">
+        <line x1="18" y1="6"  x2="6"  y2="18" />
+        <line x1="6"  y1="6"  x2="18" y2="18" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile nav -->
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Menu móvel">
+    <ul>
+      {navLinks.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class:list={['mobile-nav-link', { 'mobile-nav-link--active': isActive(link.href) }]}
+            aria-current={isActive(link.href) ? 'page' : undefined}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <a href="/contato" class="btn-primary mobile-cta">Análise gratuita</a>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid transparent;
+    transition:
+      border-color var(--duration-normal),
+      box-shadow var(--duration-normal);
+  }
+  .site-header.is-scrolled {
+    border-bottom-color: var(--color-gray-200);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* ─── Header inner ─ */
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    gap: var(--space-6);
+  }
+
+  /* ─── Logo ─ */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .logo-wordmark {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-950);
+    letter-spacing: -0.025em;
+  }
+
+  /* ─── Nav desktop ─ */
+  .nav-desktop { display: flex; align-items: center; }
+  .nav-desktop ul {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    list-style: none;
+  }
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-gray-700);
+    border-radius: var(--radius-md);
+    transition: color var(--duration-fast), background var(--duration-fast);
+    text-decoration: none;
+  }
+  .nav-link:hover {
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+  }
+  .nav-link--active {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+  }
+  .header-cta { flex-shrink: 0; }
+
+  /* ─── Hamburger ─ */
+  .menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--color-gray-950);
+    cursor: pointer;
+    transition: background var(--duration-fast);
+  }
+  .menu-toggle:hover { background: var(--color-gray-100); }
+  .menu-toggle:focus-visible { outline: none; box-shadow: var(--shadow-focus); }
+
+  /* ─── Mobile nav ─ */
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-6) var(--space-6);
+    border-top: 1px solid var(--color-gray-200);
+    background: var(--color-white);
+  }
+  .mobile-nav.is-open { display: flex; }
+  .mobile-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    list-style: none;
+    margin-bottom: var(--space-4);
+  }
+  .mobile-nav-link {
+    display: block;
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--font-size-lead);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-gray-700);
+    border-radius: var(--radius-md);
+    transition: color var(--duration-fast), background var(--duration-fast);
+  }
+  .mobile-nav-link:hover,
+  .mobile-nav-link--active {
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+  }
+  .mobile-cta { width: 100%; justify-content: center; padding: var(--space-4); font-size: var(--font-size-lead); }
+
+  /* ─── Breakpoints ─ */
+  @media (max-width: 768px) {
+    .nav-desktop, .header-cta { display: none; }
+    .menu-toggle { display: flex; }
+  }
+  @media (min-width: 769px) {
+    .mobile-nav { display: none !important; }
+  }
+</style>

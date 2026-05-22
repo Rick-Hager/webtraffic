@@ -1,0 +1,41 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  ctaText: string;
+  ctaHref?: string;
+  auxiliaryText?: string;
+}
+
+const {
+  title,
+  subtitle,
+  ctaText,
+  ctaHref = '/contato',
+  auxiliaryText,
+} = Astro.props;
+---
+
+<section class="cta-section section section-dark" aria-labelledby="cta-section-heading">
+  <div class="container cta-inner">
+    <h2 id="cta-section-heading" class="section-title light cta-title">{title}</h2>
+    {subtitle && <p class="section-subtitle light cta-subtitle">{subtitle}</p>}
+    <a href={ctaHref} class="btn-primary btn-lg">{ctaText}</a>
+    {auxiliaryText && <p class="cta-aux">{auxiliaryText}</p>}
+  </div>
+</section>
+
+<style>
+  .cta-inner {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .cta-title { margin-bottom: var(--space-5); }
+  .cta-subtitle { margin: 0 auto var(--space-8); }
+  .cta-aux {
+    margin-top: var(--space-4);
+    font-size: var(--font-size-small);
+    color: rgba(255,255,255,0.55);
+  }
+</style>

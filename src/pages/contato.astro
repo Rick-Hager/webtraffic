@@ -1,0 +1,295 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<Base
+  title="Fale com a WebTraffic | Análise Gratuita de Tráfego Pago"
+  description="Entre em contato com a WebTraffic para uma análise gratuita das suas campanhas de Google Ads e Meta Ads. Resposta em até 24 horas úteis."
+>
+
+  <Hero
+    variant="page"
+    title="Vamos conversar sobre o crescimento do seu negócio"
+    subtitle="Preencha o formulário abaixo para agendar uma análise gratuita. Analisamos sua situação atual e apresentamos um plano honesto — sem compromisso."
+  />
+
+  <section class="section" aria-labelledby="form-heading">
+    <div class="container">
+      <div class="contato-layout">
+
+        <!-- ── Formulário ── -->
+        <div>
+          <h2 id="form-heading" class="form-title">Solicite sua análise gratuita</h2>
+
+          <form class="contact-form" action="#" method="POST" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="nome">
+                  Nome completo <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  placeholder="Seu nome"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">
+                  E-mail <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="seu@email.com"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="whatsapp">
+                  WhatsApp <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="tel"
+                  id="whatsapp"
+                  name="whatsapp"
+                  placeholder="(11) 99999-9999"
+                  required
+                  autocomplete="tel"
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="empresa">
+                  Nome da empresa <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="text"
+                  id="empresa"
+                  name="empresa"
+                  placeholder="Nome da sua empresa"
+                  required
+                  autocomplete="organization"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="servico">
+                Qual serviço você tem interesse? <span class="required-mark" aria-hidden="true">*</span>
+              </label>
+              <select class="form-select" id="servico" name="servico" required>
+                <option value="" disabled selected>Selecione um serviço</option>
+                <option value="google-ads">Gestão de Google Ads</option>
+                <option value="meta-ads">Gestão de Meta Ads</option>
+                <option value="combo">Google Ads + Meta Ads (combo)</option>
+                <option value="estrategia">Estratégia e planejamento</option>
+                <option value="relatorios">Relatórios e BI</option>
+                <option value="orientacao">Não sei ainda — quero orientação</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="orcamento">
+                Orçamento mensal atual (ou previsto) para mídia paga
+              </label>
+              <select class="form-select" id="orcamento" name="orcamento">
+                <option value="" disabled selected>Selecione uma faixa</option>
+                <option value="zero">Ainda não invisto em mídia paga</option>
+                <option value="ate-1500">Até R$ 1.500/mês</option>
+                <option value="1500-5000">R$ 1.500 – R$ 5.000/mês</option>
+                <option value="5000-15000">R$ 5.000 – R$ 15.000/mês</option>
+                <option value="acima-15000">Acima de R$ 15.000/mês</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="mensagem">
+                Fale um pouco sobre seu negócio
+                <span class="form-optional">(opcional)</span>
+              </label>
+              <textarea
+                class="form-textarea"
+                id="mensagem"
+                name="mensagem"
+                placeholder="Ex: vendo [produto/serviço], meu principal desafio é [X], e estou buscando [resultado]..."
+                rows="4"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary btn-submit">
+              Quero minha análise gratuita
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </form>
+
+          <p class="form-disclaimer">
+            Respondemos em até 24 horas úteis. Seus dados são protegidos e nunca compartilhados com terceiros — em conformidade com a LGPD.
+          </p>
+        </div>
+
+        <!-- ── Info contato ── -->
+        <aside class="contato-info" aria-label="Informações de contato">
+          <h3 class="info-title">Outros canais</h3>
+
+          <!-- WhatsApp — a preencher -->
+          <div class="info-item">
+            <div class="info-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.25 9.08 19.82 19.82 0 01.18 2H3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L4.43 9.91a16 16 0 006 6l1.27-.5a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 18.92z"/></svg>
+            </div>
+            <div class="info-text">
+              <span class="info-label">WhatsApp</span>
+              <span class="badge badge-warning">A preencher pelo cliente</span>
+            </div>
+          </div>
+
+          <!-- E-mail — a preencher -->
+          <div class="info-item">
+            <div class="info-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="info-text">
+              <span class="info-label">E-mail</span>
+              <span class="badge badge-warning">A preencher pelo cliente</span>
+            </div>
+          </div>
+
+          <!-- Instagram — a preencher -->
+          <div class="info-item">
+            <div class="info-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <div class="info-text">
+              <span class="info-label">Instagram</span>
+              <span class="badge badge-warning">A preencher pelo cliente</span>
+            </div>
+          </div>
+
+          <!-- LinkedIn — a preencher -->
+          <div class="info-item">
+            <div class="info-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div class="info-text">
+              <span class="info-label">LinkedIn</span>
+              <span class="badge badge-warning">A preencher pelo cliente</span>
+            </div>
+          </div>
+
+          <div class="info-footer-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Atendimento 100% remoto &mdash; todo o Brasil</span>
+          </div>
+
+          <div class="info-footer-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Resposta em até <strong>24 horas úteis</strong></span>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  .contato-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: var(--space-16);
+    align-items: start;
+  }
+  .form-title {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-950);
+    margin-bottom: var(--space-8);
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+  }
+  .form-optional {
+    font-weight: var(--font-weight-regular);
+    color: var(--color-gray-500);
+    font-size: var(--font-size-xs);
+    margin-left: var(--space-1);
+  }
+  .btn-submit {
+    width: 100%;
+    justify-content: center;
+    padding: var(--space-4);
+    font-size: var(--font-size-lead);
+    margin-top: var(--space-2);
+  }
+  .form-disclaimer {
+    margin-top: var(--space-4);
+    font-size: var(--font-size-small);
+    color: var(--color-gray-500);
+    line-height: var(--line-height-relaxed);
+    text-align: center;
+  }
+
+  /* Info aside */
+  .contato-info {
+    background: var(--color-gray-50);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    position: sticky;
+    top: calc(68px + var(--space-8));
+  }
+  .info-title {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-950);
+    margin-bottom: var(--space-6);
+  }
+  .info-item {
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+  .info-icon { color: var(--color-primary); flex-shrink: 0; margin-top: 2px; }
+  .info-text { display: flex; flex-direction: column; gap: var(--space-2); }
+  .info-label {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .info-footer-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+    font-size: var(--font-size-small);
+    color: var(--color-gray-700);
+    line-height: var(--line-height-relaxed);
+  }
+  .info-footer-item svg { color: var(--color-primary); flex-shrink: 0; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .contato-layout { grid-template-columns: 1fr; gap: var(--space-8); }
+    .contato-info { position: static; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
